@@ -1,0 +1,17 @@
+//
+//  CSinaWeibo.pch
+//  CSinaWeibo
+//
+//  Created by 🐙怪兽 on 2019/2/23.
+//  Copyright © 2019 com.😈. All rights reserved.
+//
+
+#ifndef CSinaWeibo_pch
+#define CSinaWeibo_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "NSObject+CSTool.h"
+
+#endif /* CSinaWeibo_pch */

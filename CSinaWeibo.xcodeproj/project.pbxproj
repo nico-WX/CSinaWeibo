@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B691F3E221FD3C5007670BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691F3D221FD3C5007670BE /* AppDelegate.m */; };
+		3B691F44221FD3C5007670BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B691F42221FD3C5007670BE /* Main.storyboard */; };
+		3B691F46221FD3CB007670BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B691F45221FD3CB007670BE /* Assets.xcassets */; };
+		3B691F49221FD3CB007670BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B691F47221FD3CB007670BE /* LaunchScreen.storyboard */; };
+		3B691F4C221FD3CB007670BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691F4B221FD3CB007670BE /* main.m */; };
+		3B691F62222001B8007670BE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691F61222001B8007670BE /* LoginViewController.m */; };
+		3B691F652220171C007670BE /* CSLoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691F642220171C007670BE /* CSLoginUser.m */; };
+		3B691F68222019FC007670BE /* CSAuthorizePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691F67222019FC007670BE /* CSAuthorizePath.m */; };
+		3B691F6B22201D1F007670BE /* CSBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691F6A22201D1F007670BE /* CSBaseModel.m */; };
+		3B691F6E222034B4007670BE /* CSLoginUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691F6D222034B4007670BE /* CSLoginUserManager.m */; };
+		3B691F7122207181007670BE /* CSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691F7022207181007670BE /* CSBaseViewController.m */; };
+		3B691F74222071AC007670BE /* CSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691F73222071AC007670BE /* CSTabBarController.m */; };
+		3B691F77222071CD007670BE /* CSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691F76222071CD007670BE /* CSHomeViewController.m */; };
+		3B691FA1222145F8007670BE /* CSRequestPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FA0222145F8007670BE /* CSRequestPath.m */; };
+		3B691FA522215DFB007670BE /* NSObject+CSTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FA422215DFB007670BE /* NSObject+CSTool.m */; };
+		3B691FA822216242007670BE /* CSResponseRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FA722216242007670BE /* CSResponseRoot.m */; };
+		3B691FAB2221685B007670BE /* CSStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FAA2221685B007670BE /* CSStatus.m */; };
+		3B691FAE22216DDE007670BE /* CSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FAD22216DDE007670BE /* CSUser.m */; };
+		3B691FB122217B72007670BE /* CSDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FB022217B72007670BE /* CSDataSource.m */; };
+		3B691FB422217C3E007670BE /* CSHomeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FB322217C3E007670BE /* CSHomeDataSource.m */; };
+		3B691FB722217C9F007670BE /* CSStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FB622217C9F007670BE /* CSStatusCell.m */; };
+		3B691FB922218080007670BE /* CSStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B691FB822218080007670BE /* CSStatusCell.xib */; };
+		80358D4607C7749322392700 /* libPods-CSinaWeibo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8A1AB91BEDA237FC770FF3 /* libPods-CSinaWeibo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B691F39221FD3C5007670BE /* CSinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B691F3C221FD3C5007670BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3B691F3D221FD3C5007670BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3B691F43221FD3C5007670BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B691F45221FD3CB007670BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B691F48221FD3CB007670BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3B691F4A221FD3CB007670BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B691F4B221FD3CB007670BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B691F5D221FE9CB007670BE /* Single.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Single.h; sourceTree = "<group>"; };
+		3B691F60222001B8007670BE /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		3B691F61222001B8007670BE /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3B691F632220171B007670BE /* CSLoginUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSLoginUser.h; sourceTree = "<group>"; };
+		3B691F642220171C007670BE /* CSLoginUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSLoginUser.m; sourceTree = "<group>"; };
+		3B691F66222019FC007670BE /* CSAuthorizePath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAuthorizePath.h; sourceTree = "<group>"; };
+		3B691F67222019FC007670BE /* CSAuthorizePath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAuthorizePath.m; sourceTree = "<group>"; };
+		3B691F6922201D1F007670BE /* CSBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSBaseModel.h; sourceTree = "<group>"; };
+		3B691F6A22201D1F007670BE /* CSBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSBaseModel.m; sourceTree = "<group>"; };
+		3B691F6C222034B4007670BE /* CSLoginUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSLoginUserManager.h; sourceTree = "<group>"; };
+		3B691F6D222034B4007670BE /* CSLoginUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSLoginUserManager.m; sourceTree = "<group>"; };
+		3B691F6F22207181007670BE /* CSBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSBaseViewController.h; sourceTree = "<group>"; };
+		3B691F7022207181007670BE /* CSBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSBaseViewController.m; sourceTree = "<group>"; };
+		3B691F72222071AC007670BE /* CSTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSTabBarController.h; sourceTree = "<group>"; };
+		3B691F73222071AC007670BE /* CSTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSTabBarController.m; sourceTree = "<group>"; };
+		3B691F75222071CD007670BE /* CSHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSHomeViewController.h; sourceTree = "<group>"; };
+		3B691F76222071CD007670BE /* CSHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSHomeViewController.m; sourceTree = "<group>"; };
+		3B691F9F222145F8007670BE /* CSRequestPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSRequestPath.h; sourceTree = "<group>"; };
+		3B691FA0222145F8007670BE /* CSRequestPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSRequestPath.m; sourceTree = "<group>"; };
+		3B691FA222215DDC007670BE /* CSinaWeibo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSinaWeibo.pch; sourceTree = "<group>"; };
+		3B691FA322215DFB007670BE /* NSObject+CSTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSTool.h"; sourceTree = "<group>"; };
+		3B691FA422215DFB007670BE /* NSObject+CSTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CSTool.m"; sourceTree = "<group>"; };
+		3B691FA622216242007670BE /* CSResponseRoot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSResponseRoot.h; sourceTree = "<group>"; };
+		3B691FA722216242007670BE /* CSResponseRoot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSResponseRoot.m; sourceTree = "<group>"; };
+		3B691FA92221685B007670BE /* CSStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSStatus.h; sourceTree = "<group>"; };
+		3B691FAA2221685B007670BE /* CSStatus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSStatus.m; sourceTree = "<group>"; };
+		3B691FAC22216DDE007670BE /* CSUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSUser.h; sourceTree = "<group>"; };
+		3B691FAD22216DDE007670BE /* CSUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSUser.m; sourceTree = "<group>"; };
+		3B691FAF22217B72007670BE /* CSDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSDataSource.h; sourceTree = "<group>"; };
+		3B691FB022217B72007670BE /* CSDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSDataSource.m; sourceTree = "<group>"; };
+		3B691FB222217C3E007670BE /* CSHomeDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSHomeDataSource.h; sourceTree = "<group>"; };
+		3B691FB322217C3E007670BE /* CSHomeDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSHomeDataSource.m; sourceTree = "<group>"; };
+		3B691FB522217C9F007670BE /* CSStatusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSStatusCell.h; sourceTree = "<group>"; };
+		3B691FB622217C9F007670BE /* CSStatusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSStatusCell.m; sourceTree = "<group>"; };
+		3B691FB822218080007670BE /* CSStatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSStatusCell.xib; sourceTree = "<group>"; };
+		480773A1F5CBB9F9EF19E3C9 /* Pods-CSinaWeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSinaWeibo.release.xcconfig"; path = "Target Support Files/Pods-CSinaWeibo/Pods-CSinaWeibo.release.xcconfig"; sourceTree = "<group>"; };
+		9CE67B297F88E0E4065A5A5F /* Pods-CSinaWeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSinaWeibo.debug.xcconfig"; path = "Target Support Files/Pods-CSinaWeibo/Pods-CSinaWeibo.debug.xcconfig"; sourceTree = "<group>"; };
+		FF8A1AB91BEDA237FC770FF3 /* libPods-CSinaWeibo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CSinaWeibo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B691F36221FD3C5007670BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80358D4607C7749322392700 /* libPods-CSinaWeibo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B691F30221FD3C5007670BE = {
+			isa = PBXGroup;
+			children = (
+				3B691F3B221FD3C5007670BE /* CSinaWeibo */,
+				3B691F3A221FD3C5007670BE /* Products */,
+				9F7F258430ACAAD15C07F59E /* Pods */,
+				872F52B221633F24511272ED /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3B691F3A221FD3C5007670BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B691F39221FD3C5007670BE /* CSinaWeibo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B691F3B221FD3C5007670BE /* CSinaWeibo */ = {
+			isa = PBXGroup;
+			children = (
+				3B691F53221FD3F5007670BE /* Class */,
+			);
+			path = CSinaWeibo;
+			sourceTree = "<group>";
+		};
+		3B691F53221FD3F5007670BE /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				3B691F5C221FE97A007670BE /* Support */,
+				3B691F55221FD40B007670BE /* Controller */,
+				3B691F54221FD403007670BE /* Views */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		3B691F54221FD403007670BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3B691FAF22217B72007670BE /* CSDataSource.h */,
+				3B691FB022217B72007670BE /* CSDataSource.m */,
+				3B691FB222217C3E007670BE /* CSHomeDataSource.h */,
+				3B691FB322217C3E007670BE /* CSHomeDataSource.m */,
+				3B691F72222071AC007670BE /* CSTabBarController.h */,
+				3B691F73222071AC007670BE /* CSTabBarController.m */,
+				3B691F6F22207181007670BE /* CSBaseViewController.h */,
+				3B691F7022207181007670BE /* CSBaseViewController.m */,
+				3B691F75222071CD007670BE /* CSHomeViewController.h */,
+				3B691F76222071CD007670BE /* CSHomeViewController.m */,
+				3B691FB522217C9F007670BE /* CSStatusCell.h */,
+				3B691FB622217C9F007670BE /* CSStatusCell.m */,
+				3B691FB822218080007670BE /* CSStatusCell.xib */,
+				3B691F60222001B8007670BE /* LoginViewController.h */,
+				3B691F61222001B8007670BE /* LoginViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3B691F55221FD40B007670BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B691F6922201D1F007670BE /* CSBaseModel.h */,
+				3B691F6A22201D1F007670BE /* CSBaseModel.m */,
+				3B691FA622216242007670BE /* CSResponseRoot.h */,
+				3B691FA722216242007670BE /* CSResponseRoot.m */,
+				3B691FA92221685B007670BE /* CSStatus.h */,
+				3B691FAA2221685B007670BE /* CSStatus.m */,
+				3B691FAC22216DDE007670BE /* CSUser.h */,
+				3B691FAD22216DDE007670BE /* CSUser.m */,
+				3B691F632220171B007670BE /* CSLoginUser.h */,
+				3B691F642220171C007670BE /* CSLoginUser.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3B691F5C221FE97A007670BE /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				3B691F3C221FD3C5007670BE /* AppDelegate.h */,
+				3B691F3D221FD3C5007670BE /* AppDelegate.m */,
+				3B691F66222019FC007670BE /* CSAuthorizePath.h */,
+				3B691F67222019FC007670BE /* CSAuthorizePath.m */,
+				3B691F9F222145F8007670BE /* CSRequestPath.h */,
+				3B691FA0222145F8007670BE /* CSRequestPath.m */,
+				3B691F6C222034B4007670BE /* CSLoginUserManager.h */,
+				3B691F6D222034B4007670BE /* CSLoginUserManager.m */,
+				3B691F5D221FE9CB007670BE /* Single.h */,
+				3B691FA222215DDC007670BE /* CSinaWeibo.pch */,
+				3B691FA322215DFB007670BE /* NSObject+CSTool.h */,
+				3B691FA422215DFB007670BE /* NSObject+CSTool.m */,
+				3B691F42221FD3C5007670BE /* Main.storyboard */,
+				3B691F45221FD3CB007670BE /* Assets.xcassets */,
+				3B691F47221FD3CB007670BE /* LaunchScreen.storyboard */,
+				3B691F4A221FD3CB007670BE /* Info.plist */,
+				3B691F4B221FD3CB007670BE /* main.m */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		872F52B221633F24511272ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF8A1AB91BEDA237FC770FF3 /* libPods-CSinaWeibo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F7F258430ACAAD15C07F59E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9CE67B297F88E0E4065A5A5F /* Pods-CSinaWeibo.debug.xcconfig */,
+				480773A1F5CBB9F9EF19E3C9 /* Pods-CSinaWeibo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B691F38221FD3C5007670BE /* CSinaWeibo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B691F4F221FD3CB007670BE /* Build configuration list for PBXNativeTarget "CSinaWeibo" */;
+			buildPhases = (
+				FFCFD7404EAC8377491633DC /* [CP] Check Pods Manifest.lock */,
+				3B691F35221FD3C5007670BE /* Sources */,
+				3B691F36221FD3C5007670BE /* Frameworks */,
+				3B691F37221FD3C5007670BE /* Resources */,
+				4F06E1FDF161D80F43154A4F /* [CP] Embed Pods Frameworks */,
+				50751BAFAC9FF8EAB1E48238 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CSinaWeibo;
+			productName = CSinaWeibo;
+			productReference = 3B691F39221FD3C5007670BE /* CSinaWeibo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B691F31221FD3C5007670BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CS;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "com.😈";
+				TargetAttributes = {
+					3B691F38221FD3C5007670BE = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 3B691F34221FD3C5007670BE /* Build configuration list for PBXProject "CSinaWeibo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B691F30221FD3C5007670BE;
+			productRefGroup = 3B691F3A221FD3C5007670BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B691F38221FD3C5007670BE /* CSinaWeibo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B691F37221FD3C5007670BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B691F49221FD3CB007670BE /* LaunchScreen.storyboard in Resources */,
+				3B691F46221FD3CB007670BE /* Assets.xcassets in Resources */,
+				3B691F44221FD3C5007670BE /* Main.storyboard in Resources */,
+				3B691FB922218080007670BE /* CSStatusCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F06E1FDF161D80F43154A4F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CSinaWeibo/Pods-CSinaWeibo-frameworks.sh",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-19/iOS/RevealServer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CSinaWeibo/Pods-CSinaWeibo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50751BAFAC9FF8EAB1E48238 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CSinaWeibo/Pods-CSinaWeibo-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CSinaWeibo/Pods-CSinaWeibo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFCFD7404EAC8377491633DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CSinaWeibo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B691F35221FD3C5007670BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B691F7122207181007670BE /* CSBaseViewController.m in Sources */,
+				3B691F6E222034B4007670BE /* CSLoginUserManager.m in Sources */,
+				3B691F68222019FC007670BE /* CSAuthorizePath.m in Sources */,
+				3B691F62222001B8007670BE /* LoginViewController.m in Sources */,
+				3B691FAE22216DDE007670BE /* CSUser.m in Sources */,
+				3B691F6B22201D1F007670BE /* CSBaseModel.m in Sources */,
+				3B691F4C221FD3CB007670BE /* main.m in Sources */,
+				3B691F77222071CD007670BE /* CSHomeViewController.m in Sources */,
+				3B691F74222071AC007670BE /* CSTabBarController.m in Sources */,
+				3B691F3E221FD3C5007670BE /* AppDelegate.m in Sources */,
+				3B691FB122217B72007670BE /* CSDataSource.m in Sources */,
+				3B691FAB2221685B007670BE /* CSStatus.m in Sources */,
+				3B691FA1222145F8007670BE /* CSRequestPath.m in Sources */,
+				3B691FA822216242007670BE /* CSResponseRoot.m in Sources */,
+				3B691FB422217C3E007670BE /* CSHomeDataSource.m in Sources */,
+				3B691F652220171C007670BE /* CSLoginUser.m in Sources */,
+				3B691FA522215DFB007670BE /* NSObject+CSTool.m in Sources */,
+				3B691FB722217C9F007670BE /* CSStatusCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3B691F42221FD3C5007670BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B691F43221FD3C5007670BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3B691F47221FD3CB007670BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B691F48221FD3CB007670BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B691F4D221FD3CB007670BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3B691F4E221FD3CB007670BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B691F50221FD3CB007670BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CE67B297F88E0E4065A5A5F /* Pods-CSinaWeibo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9W837Y6AV;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = CSinaWeibo/CSinaWeibo.pch;
+				INFOPLIST_FILE = CSinaWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "lion.-01.CSinaWeibo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B691F51221FD3CB007670BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 480773A1F5CBB9F9EF19E3C9 /* Pods-CSinaWeibo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V9W837Y6AV;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = CSinaWeibo/CSinaWeibo.pch;
+				INFOPLIST_FILE = CSinaWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "lion.-01.CSinaWeibo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B691F34221FD3C5007670BE /* Build configuration list for PBXProject "CSinaWeibo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B691F4D221FD3CB007670BE /* Debug */,
+				3B691F4E221FD3CB007670BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B691F4F221FD3CB007670BE /* Build configuration list for PBXNativeTarget "CSinaWeibo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B691F50221FD3CB007670BE /* Debug */,
+				3B691F51221FD3CB007670BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B691F31221FD3C5007670BE /* Project object */;
+}
