@@ -36,8 +36,8 @@
                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xO-Og-sdx">
-                    <rect key="frame" x="14" y="66" width="386" height="68"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xO-Og-sdx">
+                    <rect key="frame" x="14" y="66" width="386" height="223"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -57,7 +57,7 @@
                 <outlet property="statusNameLabel" destination="0pi-8o-Jnh" id="Dni-Vq-CaA"/>
                 <outlet property="statusSubtitleLabel" destination="NeM-uO-VsQ" id="zni-R2-zhJ"/>
             </connections>
-            <point key="canvasLocation" x="558" y="-51"/>
+            <point key="canvasLocation" x="556.79999999999995" y="-51.27436281859071"/>
         </view>
     </objects>
 </document>

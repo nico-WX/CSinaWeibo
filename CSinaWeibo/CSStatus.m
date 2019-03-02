@@ -14,4 +14,9 @@
     return @{@"identifier":@"id"};
 }
 
+- (NSAttributedString *)allText{
+    NSAttributedString *att;
+
+    return att;
+}
 @end

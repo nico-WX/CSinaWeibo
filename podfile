@@ -2,12 +2,14 @@ platform:ios,'11.0'
 
 target "CSinaWeibo" do
 
+    pod 'AFNetworking'
 	pod 'MJExtension'
 	pod 'MJRefresh'
 	pod 'Masonry'
 	pod 'FMDB'
     pod 'SDWebImage'
 	pod 'YYKit'
+	pod 'JPFPSStatus'
 
 	pod 'Reveal-SDK', :configurations => ['Debug']
 

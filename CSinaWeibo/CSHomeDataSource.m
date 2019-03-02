@@ -15,21 +15,52 @@
 @end
 @implementation CSHomeDataSource
 
+
+#pragma mark - instancen method
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView identifier:(NSString *)identifier sectionIdentifier:(NSString *)sectionIdentifier delegate:(id<CSDataSourceDelegate>)delegate{
     if (self = [super initWithCollectionView:collectionView identifier:identifier sectionIdentifier:sectionIdentifier delegate:delegate]) {
-        [self reloadDataSource];
+        [self reloadDataSourceWithCompletion:^(BOOL success) {
+        }];
+
     }
     return self;
 }
 
-- (void)reloadDataSource{
-    [self loaddataWithCompletion:^{
+//刷新
+- (void)reloadDataSourceWithCompletion:(void(^)(BOOL success))completion{
+    [self loadDataWithCompletion:^{
+        if (completion) {
+            completion(self.root.statuses.count > 0);
+        }
         [self.collectionView reloadData];
     }];
 }
-- (void)loaddataWithCompletion:(void(^)(void))completion{
+//加载分页
+- (void)loadNextPageDataWithCompletion:(void (^)(BOOL))completion{
+    if (completion) {
+        completion(0);
+    }
+}
+-(id)objectAtIndexPath:(NSIndexPath *)indexPath{
+    return [self.root.statuses objectAtIndex:indexPath.row];
+}
+
+#pragma mark - helpe
+
+- (void)loadDataWithCompletion:(void(^)(void))completion{
+
     NSURLRequest *request = [CSRequestPath.new home_TimeLine];
     [self dataTaskWithRequest:request handler:^(NSDictionary * _Nonnull json, NSHTTPURLResponse * _Nonnull response) {
+
+        NSString *path = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"JSON.text"];
+
+        [[NSFileManager defaultManager] createFileAtPath:path contents:json.mj_JSONData attributes:nil];
+        //NSString *path = [[NSBundle mainBundle] pathForResource:@"JSON.plist" ofType:nil];
+        //[json writeToFile:path atomically:NO];
+
+//        NSLog(@"json =%@",json);
+//        NSLog(@"res =%@",response);
+
         dispatch_async(dispatch_get_main_queue(), ^{
             self.root = [CSResponseRoot instanceWithDict:json];
             if (completion) {
@@ -39,6 +70,8 @@
     }];
 }
 
+
+#pragma mark - view dataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.root.statuses.count;
 }

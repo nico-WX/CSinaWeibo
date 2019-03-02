@@ -10,6 +10,7 @@
 #import "CSLoginUserManager.h"
 #import "LoginViewController.h"
 
+
 @interface CSBaseViewController ()
 @end
 
@@ -17,9 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(currentUser) name:TokenForbiddenNotification object:nil];
 }
 
 - (CSLoginUser *)currentUser{
+
+    NSLog(@"noti");
     CSLoginUser *user = [CSLoginUserManager shareUserManager].currentUser;
     if (!user && user.access_token.length > 0) {
         LoginViewController *login = [LoginViewController new];

@@ -10,7 +10,6 @@
 #import "CSHomeViewController.h"
 
 @interface CSTabBarController ()
-
 @end
 
 @implementation CSTabBarController
@@ -19,9 +18,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+//主页
     CSHomeViewController *home = [[CSHomeViewController alloc] init];
     [home setTitle:@"主页"];
-    [self addChildViewController:home];
+    UINavigationController *homeNavgation = [[UINavigationController alloc] initWithRootViewController:home];
+    [self addChildViewController:homeNavgation];
+
+
+
 }
 
 

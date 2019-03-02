@@ -29,6 +29,10 @@
 		3B691FB422217C3E007670BE /* CSHomeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FB322217C3E007670BE /* CSHomeDataSource.m */; };
 		3B691FB722217C9F007670BE /* CSStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FB622217C9F007670BE /* CSStatusCell.m */; };
 		3B691FB922218080007670BE /* CSStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B691FB822218080007670BE /* CSStatusCell.xib */; };
+		3B691FBD2222A4C0007670BE /* CSNewStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FBB2222A4C0007670BE /* CSNewStatusCell.m */; };
+		3B691FEC2222E660007670BE /* CSImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FEB2222E660007670BE /* CSImageView.m */; };
+		3B691FEF22233457007670BE /* NSString+CSExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B691FEE22233457007670BE /* NSString+CSExtension.m */; };
+		3B69201E222A8F30007670BE /* CSStatusBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B69201D222A8F30007670BE /* CSStatusBottomView.m */; };
 		80358D4607C7749322392700 /* libPods-CSinaWeibo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF8A1AB91BEDA237FC770FF3 /* libPods-CSinaWeibo.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +80,14 @@
 		3B691FB522217C9F007670BE /* CSStatusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSStatusCell.h; sourceTree = "<group>"; };
 		3B691FB622217C9F007670BE /* CSStatusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSStatusCell.m; sourceTree = "<group>"; };
 		3B691FB822218080007670BE /* CSStatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CSStatusCell.xib; sourceTree = "<group>"; };
+		3B691FBA2222A4C0007670BE /* CSNewStatusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSNewStatusCell.h; sourceTree = "<group>"; };
+		3B691FBB2222A4C0007670BE /* CSNewStatusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSNewStatusCell.m; sourceTree = "<group>"; };
+		3B691FEA2222E660007670BE /* CSImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSImageView.h; sourceTree = "<group>"; };
+		3B691FEB2222E660007670BE /* CSImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSImageView.m; sourceTree = "<group>"; };
+		3B691FED22233457007670BE /* NSString+CSExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CSExtension.h"; sourceTree = "<group>"; };
+		3B691FEE22233457007670BE /* NSString+CSExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSExtension.m"; sourceTree = "<group>"; };
+		3B69201C222A8F30007670BE /* CSStatusBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSStatusBottomView.h; sourceTree = "<group>"; };
+		3B69201D222A8F30007670BE /* CSStatusBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSStatusBottomView.m; sourceTree = "<group>"; };
 		480773A1F5CBB9F9EF19E3C9 /* Pods-CSinaWeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSinaWeibo.release.xcconfig"; path = "Target Support Files/Pods-CSinaWeibo/Pods-CSinaWeibo.release.xcconfig"; sourceTree = "<group>"; };
 		9CE67B297F88E0E4065A5A5F /* Pods-CSinaWeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSinaWeibo.debug.xcconfig"; path = "Target Support Files/Pods-CSinaWeibo/Pods-CSinaWeibo.debug.xcconfig"; sourceTree = "<group>"; };
 		FF8A1AB91BEDA237FC770FF3 /* libPods-CSinaWeibo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CSinaWeibo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,19 +144,22 @@
 		3B691F54221FD403007670BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3B691FAF22217B72007670BE /* CSDataSource.h */,
-				3B691FB022217B72007670BE /* CSDataSource.m */,
-				3B691FB222217C3E007670BE /* CSHomeDataSource.h */,
-				3B691FB322217C3E007670BE /* CSHomeDataSource.m */,
 				3B691F72222071AC007670BE /* CSTabBarController.h */,
 				3B691F73222071AC007670BE /* CSTabBarController.m */,
 				3B691F6F22207181007670BE /* CSBaseViewController.h */,
 				3B691F7022207181007670BE /* CSBaseViewController.m */,
+				3B69201A22281F6E007670BE /* dataSource */,
 				3B691F75222071CD007670BE /* CSHomeViewController.h */,
 				3B691F76222071CD007670BE /* CSHomeViewController.m */,
 				3B691FB522217C9F007670BE /* CSStatusCell.h */,
 				3B691FB622217C9F007670BE /* CSStatusCell.m */,
 				3B691FB822218080007670BE /* CSStatusCell.xib */,
+				3B691FBA2222A4C0007670BE /* CSNewStatusCell.h */,
+				3B691FBB2222A4C0007670BE /* CSNewStatusCell.m */,
+				3B69201C222A8F30007670BE /* CSStatusBottomView.h */,
+				3B69201D222A8F30007670BE /* CSStatusBottomView.m */,
+				3B691FEA2222E660007670BE /* CSImageView.h */,
+				3B691FEB2222E660007670BE /* CSImageView.m */,
 				3B691F60222001B8007670BE /* LoginViewController.h */,
 				3B691F61222001B8007670BE /* LoginViewController.m */,
 			);
@@ -164,6 +179,8 @@
 				3B691FAD22216DDE007670BE /* CSUser.m */,
 				3B691F632220171B007670BE /* CSLoginUser.h */,
 				3B691F642220171C007670BE /* CSLoginUser.m */,
+				3B691FED22233457007670BE /* NSString+CSExtension.h */,
+				3B691FEE22233457007670BE /* NSString+CSExtension.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -190,6 +207,17 @@
 				3B691F4B221FD3CB007670BE /* main.m */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		3B69201A22281F6E007670BE /* dataSource */ = {
+			isa = PBXGroup;
+			children = (
+				3B691FAF22217B72007670BE /* CSDataSource.h */,
+				3B691FB022217B72007670BE /* CSDataSource.m */,
+				3B691FB222217C3E007670BE /* CSHomeDataSource.h */,
+				3B691FB322217C3E007670BE /* CSHomeDataSource.m */,
+			);
+			name = dataSource;
 			sourceTree = "<group>";
 		};
 		872F52B221633F24511272ED /* Frameworks */ = {
@@ -355,15 +383,19 @@
 			files = (
 				3B691F7122207181007670BE /* CSBaseViewController.m in Sources */,
 				3B691F6E222034B4007670BE /* CSLoginUserManager.m in Sources */,
+				3B691FBD2222A4C0007670BE /* CSNewStatusCell.m in Sources */,
 				3B691F68222019FC007670BE /* CSAuthorizePath.m in Sources */,
 				3B691F62222001B8007670BE /* LoginViewController.m in Sources */,
 				3B691FAE22216DDE007670BE /* CSUser.m in Sources */,
 				3B691F6B22201D1F007670BE /* CSBaseModel.m in Sources */,
+				3B691FEF22233457007670BE /* NSString+CSExtension.m in Sources */,
 				3B691F4C221FD3CB007670BE /* main.m in Sources */,
 				3B691F77222071CD007670BE /* CSHomeViewController.m in Sources */,
 				3B691F74222071AC007670BE /* CSTabBarController.m in Sources */,
+				3B69201E222A8F30007670BE /* CSStatusBottomView.m in Sources */,
 				3B691F3E221FD3C5007670BE /* AppDelegate.m in Sources */,
 				3B691FB122217B72007670BE /* CSDataSource.m in Sources */,
+				3B691FEC2222E660007670BE /* CSImageView.m in Sources */,
 				3B691FAB2221685B007670BE /* CSStatus.m in Sources */,
 				3B691FA1222145F8007670BE /* CSRequestPath.m in Sources */,
 				3B691FA822216242007670BE /* CSResponseRoot.m in Sources */,

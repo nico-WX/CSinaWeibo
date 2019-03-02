@@ -18,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *TextContentLabel;
 
 
-
 - (void)configureCellWith:(CSStatus*)status;
 @end
 

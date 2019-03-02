@@ -11,10 +11,10 @@
 
 
 @protocol CSDataSourceDelegate <NSObject>
+
 @optional
 - (void)configureCell:(id)cell item:(id)item atIndexPath:(NSIndexPath*)indexPath;
 - (void)configureCell:(id)cell item:(id)item ;
-
 @end
 
 
@@ -28,11 +28,15 @@
 
 
 /**刷新数据源数据*/
-- (void)reloadDataSource;
+- (void)reloadDataSourceWithCompletion:(void(^)(BOOL success))completion;
+/**加载下一页数据*/
+- (void)loadNextPageDataWithCompletion:(void(^)(BOOL success))completion;
 /**清除数据*/
 - (void)clearDataSource;
-/**子类辅助配置代理方法,子类内部配置数据时调用*/
+/**子类辅助配置代理方法,子类内部出栈Cell,为Cell配置数据时调用*/
 - (void)configureCell:(id)cell item:(id)item atIndexPath:(NSIndexPath*)indexPath;
+- (id)objectAtIndexPath:(NSIndexPath*)indexPath;
+
 
 - (instancetype)initWithTableView:(UITableView*)tableViwe
                        identifier:(NSString*)identifier

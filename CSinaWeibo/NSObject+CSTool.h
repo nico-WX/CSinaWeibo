@@ -10,6 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+
+extern NSString * const TokenForbiddenNotification;
+
 //请求数据回调
 typedef void(^RequestCallBack)(NSDictionary* json, NSHTTPURLResponse* response);
 

@@ -7,7 +7,9 @@
 //
 
 #import "NSObject+CSTool.h"
+#import <AFNetworking.h>
 
+NSString * const TokenForbiddenNotification = @" 403 Forbidden Notification";
 @implementation NSObject (CSTool)
 
 //统一解析响应体,处理异常等.
@@ -27,7 +29,9 @@
             break;
         case 401:
             break;
-        case 403:
+        case 403:{
+            [[NSNotificationCenter defaultCenter] postNotificationName:TokenForbiddenNotification object:nil];
+        }
             break;
 
         default:
@@ -38,7 +42,19 @@
 
 //封装发起任务请求操作,通过block 回调返回数据.
 - (void)dataTaskWithRequest:(NSURLRequest*)request handler:(RequestCallBack)handle {
+
+    //NSLog(@"request =%@",request);
+
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"error = %@",error.localizedDescription);
+        }
+
+        NSLog(@"status code =%ld",((NSHTTPURLResponse*)response).statusCode);
+        NSLog(@"request URLrelativeString =%@",request.URL.relativeString);
+        NSLog(@"request paramer : %@",request.URL.parameterString);
+        NSLog(@"request urlStr =%@",request.URL.absoluteString);
+
         //统一处理返回的数据,响应体等,不管是否有回调, 在解析中都处理请求结果.
         NSDictionary *json = [self serializationDataWithResponse:response data:data error:error];
         if (handle) {
@@ -47,6 +63,17 @@
             });
         }
     }] resume];
+
+
 }
 
+- (AFHTTPSessionManager*)shareHTTPSessionManager{
+    NSURLSessionConfiguration *configuration = [[NSURLSessionConfiguration alloc] init];
+    return [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];
+}
+
+- (AFURLSessionManager*)shareURLSessionManager{
+    NSURLSessionConfiguration *configuration = [[NSURLSessionConfiguration alloc] init];
+    return [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+}
 @end

@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface CSStatus : CSBaseModel
 
 @property(nonatomic,copy)NSString *created_at;
@@ -63,8 +64,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) NSNumber *gif_ids;
 @property(nonatomic,strong) NSNumber *is_show_bulletin;
 @property(nonatomic,strong) NSDictionary *comment_manage_info;
+@property(nonatomic,strong) NSDictionary *url_short;
 
 
+
+@property(nonatomic,strong) CSStatus *retweeted_status;
+
+@property(nonatomic,copy)NSAttributedString *allText;
 @end
 
 NS_ASSUME_NONNULL_END
