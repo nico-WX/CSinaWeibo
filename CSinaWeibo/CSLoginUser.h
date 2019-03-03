@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CSLoginUser : CSBaseModel
-@property(nonatomic,copy,readonly) NSString *access_token;
+@property(nonatomic,copy,  readonly) NSString *access_token;
+@property(nonatomic,assign,readonly) NSUInteger expires_in;
+@property(nonatomic,assign,readonly) NSUInteger uid;
+@property(nonatomic,assign,readonly) BOOL isRealName;
 
 /**转换为字典, 存储*/ 
 - (NSDictionary*)dictionaryValue;

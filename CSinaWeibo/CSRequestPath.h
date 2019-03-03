@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSURLRequest*)repost_timeline;
 - (NSURLRequest*)mentions;
 
+/**将短链接转换为长链接*/
+- (NSURLRequest*)short_url_expandWithShortURL:(NSString*)shortURL;
+
 @end
 
 NS_ASSUME_NONNULL_END

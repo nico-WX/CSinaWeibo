@@ -8,53 +8,74 @@
 
 #import "CSRequestPath.h"
 
+
 @interface CSRequestPath()
-@property(nonatomic, copy) NSString *root;
+
+@property(nonatomic, strong) NSURLComponents *components;
+@property(nonatomic, strong) NSURLQueryItem *tokenQuery;
 @end
 
 
-static NSString *const token = @"?access_token=2.00AZDAcH6NFl6B1af85e1942wkBjSC";
+static NSString *const accessToken = @"2.00AZDAcH6NFl6B1af85e1942wkBjSC";
 
 @implementation CSRequestPath
 
 - (instancetype)init{
     if (self = [super init]) {
-        NSString *basePath = @"https://api.weibo.com";
-        NSString *version = @"2";
-        _root = [basePath stringByAppendingPathComponent:version];
+
+        _components = [[NSURLComponents alloc] init];
+        [_components setScheme:@"https"];
+        [_components setHost:@"api.weibo.com"];
+        [_components setPath:@"/2"];
+
+        _tokenQuery = [NSURLQueryItem queryItemWithName:@"access_token" value:accessToken];
+        //NSLog(@"url =%@",_components.URL);
     }
     return self;
-}
-
-- (NSURLRequest*)jointURLWithPath:(NSString*)path{
-    NSString *temp = [path stringByAppendingString:token];
-    temp = [self.root stringByAppendingPathComponent:temp];
-    return [NSURLRequest requestWithURL:[NSURL URLWithString:temp]];
 }
 
 
 // 获取当前登录用户及其所关注用户的最新微博
 - (NSURLRequest *)home_TimeLine{
-    NSString *path = @"statuses/home_timeline.json";
-    return [self jointURLWithPath:path];
+
+    self.components.path =  [_components.path stringByAppendingPathComponent:@"statuses/home_timeline.json"];
+    NSURLQueryItem *count = [NSURLQueryItem queryItemWithName:@"count" value:@"100"];
+    self.components.queryItems = @[_tokenQuery,count];
+
+    NSLog(@"url =====%@",self.components.URL);
+    return [NSURLRequest requestWithURL:self.components.URL];
 }
 
 //获取用户发布的微博
 - (NSURLRequest *)user_TimeLine{
-    NSString *path = @"statuses/user_timeline.json";
-    return [self jointURLWithPath:path];
+    self.components.path =  [_components.path stringByAppendingPathComponent:@"statuses/user_timeline.json"];
+    self.components.queryItems = @[_tokenQuery,];
+
+    return [NSURLRequest requestWithURL:self.components.URL];
 }
 
 //返回一条原创微博的最新转发微博
 - (NSURLRequest *)repost_timeline{
-    NSString *path = @"statuses/repost_timeline.json";
-    return [self jointURLWithPath:path];
+    self.components.path = [_components.path stringByAppendingPathComponent:@"statuses/repost_timeline.json"];
+    self.components.queryItems = @[_tokenQuery,];
+    return [NSURLRequest requestWithURL:self.components.URL];
 }
 
 //获取@当前用户的最新微博
 - (NSURLRequest *)mentions{
-    NSString *path = @"statuses/mentions.json";
-    return [self jointURLWithPath:path];
+    self.components.path = [_components.path stringByAppendingPathComponent:@"statuses/mentions.json"];
+    self.components.queryItems = @[_tokenQuery,];
+    return [NSURLRequest requestWithURL:self.components.URL];
+}
+
+
+- (NSURLRequest *)short_url_expandWithShortURL:(NSString *)shortURL{
+
+//  //https://api.weibo.com/2/short_url/expand.json?access_token=2.00AZDAcH6NFl6B1af85e1942wkBjSC&url_short=http://t.cn/EVkg9h2
+    self.components.path = [_components.path stringByAppendingPathComponent:@"short_url/expand.json"];
+    NSURLQueryItem *url_short = [NSURLQueryItem queryItemWithName:@"url_short" value:shortURL];
+    self.components.queryItems = @[_tokenQuery,url_short];
+    return [NSURLRequest requestWithURL:self.components.URL];
 }
 
 

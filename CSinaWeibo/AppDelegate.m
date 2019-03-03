@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "CSLoginUserManager.h"
 #import "CSTabBarController.h"
+#import <JPFPSStatus.h>
 
 @interface AppDelegate ()
 @end
@@ -18,11 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-
+    
+//main window
     CSTabBarController *root = [[CSTabBarController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setRootViewController:root];
     [self.window makeKeyAndVisible];
+
+
+
+
+//fps
+#if defined(DEBUG) || defined(_DEBUG)
+    [[JPFPSStatus sharedInstance] open];
+#endif
 
     return YES;
 }

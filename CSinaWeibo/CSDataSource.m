@@ -35,9 +35,16 @@
 }
 
 #pragma mark - instance method
-- (void)reloadDataSource{
+- (void)reloadDataSourceWithCompletion:(void(^)(BOOL success))completion{
 }
+
+-(void)loadNextPageDataWithCompletion:(void (^)(BOOL success))completion{
+}
+
 -(void)clearDataSource{
+}
+- (id)objectAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
 }
 
 // 默认实现设置成 0
@@ -47,12 +54,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:_identifier forIndexPath:indexPath];
-    if ([_delegate respondsToSelector:@selector(configureCell:item:)]) {
-        [_delegate configureCell:cell item:@"0"];
-    }
-    if ([_delegate respondsToSelector:@selector(configureCell:item:atIndexPath:)]) {
-        [_delegate configureCell:cell item:@"0" atIndexPath:indexPath];
-    }
+    [self configureCell:cell item:@"0" atIndexPath:indexPath];
     return cell;
 }
 
