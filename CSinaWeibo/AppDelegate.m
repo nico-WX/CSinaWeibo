@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "CSLoginUserManager.h"
 #import "CSTabBarController.h"
 #import <JPFPSStatus.h>
 

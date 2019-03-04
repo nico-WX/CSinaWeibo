@@ -8,25 +8,21 @@
 
 #import "CSImageView.h"
 #import <Masonry.h>
+#import <AVKit/AVKit.h>
 
 @interface CSImageView ()
-@property(nonatomic,strong) UIStackView *vStackView;
 @end
 
 static CGFloat const spacing = 4.0;
-
 static CGFloat const w = 100;
 static CGFloat const h = 100;
-@implementation CSImageView
 
+@implementation CSImageView
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        _vStackView = [[UIStackView alloc] init];
-        [_vStackView setSpacing:spacing];
-        [_vStackView setDistribution:UIStackViewDistributionFillEqually];
-
-        [self addSubview:_vStackView];
+        _playerViewController = [[AVPlayerViewController alloc] init];
+        
     }
     return self;
 }
@@ -36,21 +32,9 @@ static CGFloat const h = 100;
 
     static UIEdgeInsets inserts;
     inserts = UIEdgeInsetsMake(spacing, spacing, spacing, spacing);
-
     __weak typeof(self) weakSelf = self;
-    [_vStackView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(weakSelf).insets(inserts);
-    }];
+
 }
 
-- (void)setImageArray:(NSArray<NSString *> *)imageArray{
-    if (_imageArray != imageArray) {
-        _imageArray = imageArray;
-
-        for (NSString *path in imageArray) {
-            
-        }
-    }
-}
 
 @end

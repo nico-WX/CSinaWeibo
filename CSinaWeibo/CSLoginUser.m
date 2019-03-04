@@ -7,15 +7,11 @@
 //
 
 #import "CSLoginUser.h"
-#import <MJExtension.h>
 
-
-@interface CSLoginUser ()
-//@property(nonatomic,copy,readonly) NSString *access_token;
-@property(nonatomic,assign) NSUInteger expires_in;
-@property(nonatomic,assign) BOOL isRealName;
-@property(nonatomic,assign) NSUInteger uid;
-@end
+static NSString *const k_accessTokenKEY = @"accessToken";
+static NSString *const k_expiresKEY     = @"expires";
+static NSString *const k_isRealNameKEY  = @"isRealName";
+static NSString *const k_uidKEY         = @"uid";
 
 @implementation CSLoginUser
 
@@ -27,7 +23,8 @@
              };
 }
 
+
 - (NSString *)description{
-    return [NSString stringWithFormat:@"token: %@ \n uid: %@\n  realName:%@",self.access_token,@(self.uid),@(self.isRealName)];
+    return [NSString stringWithFormat:@"token:%@ \n uid: %@\n  realName:%@ exp =%@ \n",self.access_token,@(self.uid),@(self.isRealName),@(self.expires_in)];
 }
 @end

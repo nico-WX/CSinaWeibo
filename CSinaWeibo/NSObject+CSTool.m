@@ -27,10 +27,13 @@ NSString * const TokenForbiddenNotification = @" 403 Forbidden Notification";
             break;
         case 400:
             break;
-        case 401:
-            break;
-        case 403:{
+        case 401:{ //未授权
             [[NSNotificationCenter defaultCenter] postNotificationName:TokenForbiddenNotification object:nil];
+        }
+            break;
+        case 403:{ //服务器拒绝请求。
+            NSLog(@"接口调用次数限制");
+            //[[NSNotificationCenter defaultCenter] postNotificationName:TokenForbiddenNotification object:nil];
         }
             break;
 
@@ -49,11 +52,6 @@ NSString * const TokenForbiddenNotification = @" 403 Forbidden Notification";
         if (error) {
             NSLog(@"error = %@",error.localizedDescription);
         }
-
-        NSLog(@"status code =%ld",((NSHTTPURLResponse*)response).statusCode);
-        NSLog(@"request URLrelativeString =%@",request.URL.relativeString);
-        NSLog(@"request paramer : %@",request.URL.parameterString);
-        NSLog(@"request urlStr =%@",request.URL.absoluteString);
 
         //统一处理返回的数据,响应体等,不管是否有回调, 在解析中都处理请求结果.
         NSDictionary *json = [self serializationDataWithResponse:response data:data error:error];

@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CSLoginUser.h"
-NS_ASSUME_NONNULL_BEGIN
 
+extern NSString *const loginUserKey; //登录的用户json格式 userDefaultsKey
 
 @interface CSBaseViewController : UIViewController
 @property(nonatomic,strong,readonly) CSLoginUser *currentUser;
@@ -17,4 +17,4 @@ NS_ASSUME_NONNULL_BEGIN
 //- (void)loginNewUser;
 @end
 
-NS_ASSUME_NONNULL_END
+

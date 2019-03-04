@@ -7,16 +7,19 @@
 //
 
 #import "CSRequestPath.h"
-
+#import "CSLoginUser.h"
+#import "CSBaseViewController.h"
 
 @interface CSRequestPath()
 
 @property(nonatomic, strong) NSURLComponents *components;
 @property(nonatomic, strong) NSURLQueryItem *tokenQuery;
+
+@property(nonatomic, strong) CSLoginUser *currentUser;
 @end
 
 
-static NSString *const accessToken = @"2.00AZDAcH6NFl6B1af85e1942wkBjSC";
+//static NSString *const accessToken = @"2.00AZDAcH6NFl6B1af85e1942wkBjSC";
 
 @implementation CSRequestPath
 
@@ -28,12 +31,26 @@ static NSString *const accessToken = @"2.00AZDAcH6NFl6B1af85e1942wkBjSC";
         [_components setHost:@"api.weibo.com"];
         [_components setPath:@"/2"];
 
-        _tokenQuery = [NSURLQueryItem queryItemWithName:@"access_token" value:accessToken];
+        NSDictionary *json = [[NSUserDefaults standardUserDefaults] valueForKey:loginUserKey];
+        _currentUser =  [CSLoginUser instanceWithDict:json];
+
+        _tokenQuery = [NSURLQueryItem queryItemWithName:@"access_token" value:_currentUser.access_token];
+        NSLog(@"token ==%@",_currentUser.access_token);
+
+        //刷新
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setCurrentUser:) name:TokenForbiddenNotification object:nil];
         //NSLog(@"url =%@",_components.URL);
     }
     return self;
 }
 
+- (CSLoginUser *)currentUser{
+    if (!_currentUser) {
+        NSDictionary *json = [[NSUserDefaults standardUserDefaults] valueForKey:loginUserKey];
+        _currentUser = [CSLoginUser instanceWithDict:json];
+    }
+    return _currentUser;
+}
 
 // 获取当前登录用户及其所关注用户的最新微博
 - (NSURLRequest *)home_TimeLine{
@@ -42,7 +59,6 @@ static NSString *const accessToken = @"2.00AZDAcH6NFl6B1af85e1942wkBjSC";
     NSURLQueryItem *count = [NSURLQueryItem queryItemWithName:@"count" value:@"100"];
     self.components.queryItems = @[_tokenQuery,count];
 
-    NSLog(@"url =====%@",self.components.URL);
     return [NSURLRequest requestWithURL:self.components.URL];
 }
 
@@ -77,7 +93,6 @@ static NSString *const accessToken = @"2.00AZDAcH6NFl6B1af85e1942wkBjSC";
     self.components.queryItems = @[_tokenQuery,url_short];
     return [NSURLRequest requestWithURL:self.components.URL];
 }
-
 
 
 // statuses/show    根据ID获取单条微博信息

@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+
+@class AVPlayerViewController;
+@class CSStatusBottomView;
+
 @class CSStatus;
-NS_ASSUME_NONNULL_BEGIN
 
 @interface CSNewStatusCell : UICollectionViewCell
-- (void)configureCellWith:(CSStatus *)status;
 
+@property(nonatomic,strong,readonly) UITextView *textView;
+@property(nonatomic,strong,readonly) AVPlayerViewController *avPlayerViewController;
+@property(nonatomic,strong,readonly) CSStatusBottomView *bottomView;
+
+- (void)configureCellWith:(CSStatus *)status;
 @end
 
-NS_ASSUME_NONNULL_END

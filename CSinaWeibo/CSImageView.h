@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class AVPlayerViewController;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CSImageView : UIView
+@property(nonatomic,strong,readonly) AVPlayerViewController *playerViewController;
 @property(nonatomic,strong,readonly) NSArray<UIImage*> *images;
+
 @property(nonatomic,strong) NSArray<NSString*> *imageArray;
+
 @end
 
 NS_ASSUME_NONNULL_END

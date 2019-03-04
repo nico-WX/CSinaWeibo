@@ -10,14 +10,13 @@
 #import <Masonry.h>
 
 #import "CSHomeViewController.h"
-#import "CSStatusCell.h"
 #import "CSNewStatusCell.h"
 
 #import "CSRequestPath.h"
 #import "CSResponseRoot.h"
 #import "CSHomeDataSource.h"
 
-@interface CSHomeViewController ()<UICollectionViewDelegate,CSDataSourceDelegate>
+@interface CSHomeViewController ()<UICollectionViewDelegate,CSDataSourceDelegate,UITextViewDelegate>
 @property(nonatomic,strong) UICollectionView *colletionView;
 @property(nonatomic,strong) UICollectionViewFlowLayout *layout;
 @property(nonatomic,assign) UIEdgeInsets insets;
@@ -34,6 +33,8 @@ static NSString *const identifier = @"status cell dientifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _insets = UIEdgeInsetsMake(0, 8, 0, 8);
+
+    NSLog(@"view did load     ...");
 
     [self.view setBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1]];
     [self.view addSubview:self.colletionView];
@@ -74,7 +75,6 @@ static NSString *const identifier = @"status cell dientifier";
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
 
-
     //一开始显示时, 触发一次刷新, 刷新cell 布局,计算高度
     [self.dataSource reloadDataSourceWithCompletion:^(BOOL success) {
         [self.colletionView.mj_header endRefreshing];
@@ -85,12 +85,11 @@ static NSString *const identifier = @"status cell dientifier";
 
     UIView *superView = self.view;
     [_colletionView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(superView);
+        make.edges.mas_equalTo(superView).insets(UIEdgeInsetsMake(8, 0, 0, 0));
     }];
-    //[self.colletionView setFrame:self.view.bounds];
 }
 
-
+#pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     //CSStatus *status = [self.dataSource objectAtIndexPath:indexPath];
 
@@ -100,14 +99,26 @@ static NSString *const identifier = @"status cell dientifier";
     NSURLRequest *request = [[CSRequestPath new] short_url_expandWithShortURL:path];
     [self dataTaskWithRequest:request handler:^(NSDictionary * _Nonnull json, NSHTTPURLResponse * _Nonnull response) {
         NSLog(@"res =%@",response);
-        NSLog(@"json =%@",json);
+        NSLog(@"交换完成的长连接对象: json =%@",json);
 
     }];
-
 }
 
+#pragma mark - UITextViewDelegate
+- (BOOL)textView:(UITextView *)textView shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction{
+    NSLog(@"text attachment =%@",textAttachment);
+    return 0;
+}
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction{
+    NSLog(@"InteractWithURL  ==%@",URL);
+    return 0;
+}
+
+
+#pragma mark - DataSourceDelegate
 - (void)configureCell:(CSNewStatusCell*)cell item:(CSStatus*)item{
     [cell configureCellWith:item];
+    [cell.textView setDelegate:self]; //文本视图代理 拦截事件
 }
 
 - (UICollectionView *)colletionView{
