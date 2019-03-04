@@ -35,8 +35,8 @@
 - (void)clearDataSource;
 /**子类辅助配置代理方法,子类内部出栈Cell,为Cell配置数据时调用*/
 - (void)configureCell:(id)cell item:(id)item atIndexPath:(NSIndexPath*)indexPath;
-- (id)objectAtIndexPath:(NSIndexPath*)indexPath;
 
+- (id)objectAtIndexPath:(NSIndexPath*)indexPath;
 
 - (instancetype)initWithTableView:(UITableView*)tableViwe
                        identifier:(NSString*)identifier

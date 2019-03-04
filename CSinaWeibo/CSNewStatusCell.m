@@ -8,6 +8,8 @@
 
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
+#import <UIImage+YYAdd.h>
+#import <SDWebImageDownloader.h>
 #import <AVKit/AVKit.h>
 
 #import "CSNewStatusCell.h"
@@ -29,8 +31,6 @@
     CGFloat cellWidth;
     CGFloat spacing;
 }
-//@synthesize bottomView = _bottomView;
-
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -125,26 +125,7 @@
 
     self.nameLabel.text = status.user.name;
     self.subtitleLabel.text = status.user.location;
-
-     NSString *text = status.text ;
-    if (status.retweeted_status) {
-//        NSString *userName = [NSString stringWithFormat:@"@%@",status.retweeted_status.user.name];
-//        NSDictionary *att = @{NSForegroundColorAttributeName:UIColor.blueColor};
-
-        NSAttributedString *attName = [status.retweeted_status.user.name userInfoString];
-
-        NSString *rew = [NSString stringWithFormat:@"%@",status.retweeted_status.text];
-
-        NSMutableAttributedString *mAtt = [[NSMutableAttributedString alloc] initWithString:text];
-        [mAtt appendAttributedString:attName];
-        [mAtt appendAttributedString:[[NSAttributedString alloc] initWithString:rew]];
-        self.textView.attributedText = mAtt;
-
-    }else{
-        self.textView.text = text;
-    }
-
-
+    // profile image
     NSString *url = status.user.profile_image_url;
     //替换参数
     NSRange rang = [url rangeOfString:@".50"];
@@ -152,8 +133,37 @@
     CGFloat w = CGRectGetWidth(self.imageView.bounds)*[UIScreen mainScreen].scale;
     NSString *withString = [NSString stringWithFormat:@".%.1f",w];
     url = [url stringByReplacingOccurrencesOfString:sub withString:withString];
-
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:url] completed:nil];
+
+
+    [self.textView setAttributedText:status.allText];
+
+    if (status.pic_urls.count > 0) {
+
+        NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc] initWithAttributedString:self.textView.attributedText];
+
+        __weak typeof(self) weakSelf = self;
+        for (NSDictionary *urlDict in status.pic_urls) {
+
+            NSString *url = [[urlDict allValues] lastObject];
+
+            [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:url] options:(SDWebImageDownloaderProgressiveDownload|SDWebImageDownloaderContinueInBackground) progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+            } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
+
+                NSTextAttachment *attachement =[[NSTextAttachment alloc] init];
+                attachement.image = image;
+                attachement.bounds = CGRectMake(0, 0, 120, 120);
+                NSAttributedString *imageString = [NSAttributedString  attributedStringWithAttachment:attachement];
+                NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:imageString];
+                [mutableAttributedString addAttributes:@{NSAttachmentAttributeName:imageString} range:(NSMakeRange(0, imageString.length))];
+                [attributed appendAttributedString:mutableAttributedString];
+
+                //[attributed addAttribute:NSAttachmentAttributeName value:imageString range:NSMakeRange(attributed.string.length, 1)];
+                weakSelf.textView.attributedText = attributed;
+                NSLog(@"text att =%@",weakSelf.textView.attributedText);
+            }];
+        }
+    }
 
     [self setNeedsLayout];
 }
@@ -161,16 +171,11 @@
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
     UICollectionViewLayoutAttributes *att = [super preferredLayoutAttributesFittingAttributes:layoutAttributes];
-//
-//    CGFloat w = CGRectGetWidth([UIScreen mainScreen].bounds) - 16;
+
     CGSize size = att.size;
     size.width = cellWidth;
-
     att.size = size;
-    //NSLog(@"H =%f",size.height);
     return att;
 }
-
-
 
 @end

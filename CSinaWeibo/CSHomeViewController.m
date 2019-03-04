@@ -109,6 +109,7 @@ static NSString *const identifier = @"status cell dientifier";
     return 0;
 }
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction{
+    NSLog(@"InteractWithURL  ==%@",URL);
     return 0;
 }
 
@@ -116,6 +117,7 @@ static NSString *const identifier = @"status cell dientifier";
 #pragma mark - DataSourceDelegate
 - (void)configureCell:(CSNewStatusCell*)cell item:(CSStatus*)item{
     [cell configureCellWith:item];
+    [cell.textView setDelegate:self]; //文本视图代理 拦截事件
 }
 
 - (UICollectionView *)colletionView{

@@ -123,6 +123,7 @@
 		3B691F53221FD3F5007670BE /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				3BE7E079222D1E0F001F629B /* Model */,
 				3B691F5C221FE97A007670BE /* Support */,
 				3B691F55221FD40B007670BE /* Controller */,
 				3B691F54221FD403007670BE /* Views */,
@@ -133,13 +134,7 @@
 		3B691F54221FD403007670BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3B691F72222071AC007670BE /* CSTabBarController.h */,
-				3B691F73222071AC007670BE /* CSTabBarController.m */,
-				3B691F6F22207181007670BE /* CSBaseViewController.h */,
-				3B691F7022207181007670BE /* CSBaseViewController.m */,
 				3B69201A22281F6E007670BE /* dataSource */,
-				3B691F75222071CD007670BE /* CSHomeViewController.h */,
-				3B691F76222071CD007670BE /* CSHomeViewController.m */,
 				3B691FBA2222A4C0007670BE /* CSNewStatusCell.h */,
 				3B691FBB2222A4C0007670BE /* CSNewStatusCell.m */,
 				3B69201C222A8F30007670BE /* CSStatusBottomView.h */,
@@ -153,16 +148,12 @@
 		3B691F55221FD40B007670BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3B691F6922201D1F007670BE /* CSBaseModel.h */,
-				3B691F6A22201D1F007670BE /* CSBaseModel.m */,
-				3B691FA622216242007670BE /* CSResponseRoot.h */,
-				3B691FA722216242007670BE /* CSResponseRoot.m */,
-				3B691FA92221685B007670BE /* CSStatus.h */,
-				3B691FAA2221685B007670BE /* CSStatus.m */,
-				3B691FAC22216DDE007670BE /* CSUser.h */,
-				3B691FAD22216DDE007670BE /* CSUser.m */,
-				3B691F632220171B007670BE /* CSLoginUser.h */,
-				3B691F642220171C007670BE /* CSLoginUser.m */,
+				3B691F72222071AC007670BE /* CSTabBarController.h */,
+				3B691F73222071AC007670BE /* CSTabBarController.m */,
+				3B691F6F22207181007670BE /* CSBaseViewController.h */,
+				3B691F7022207181007670BE /* CSBaseViewController.m */,
+				3B691F75222071CD007670BE /* CSHomeViewController.h */,
+				3B691F76222071CD007670BE /* CSHomeViewController.m */,
 				3B691FED22233457007670BE /* NSString+CSExtension.h */,
 				3B691FEE22233457007670BE /* NSString+CSExtension.m */,
 			);
@@ -200,6 +191,23 @@
 				3B691FB322217C3E007670BE /* CSHomeDataSource.m */,
 			);
 			name = dataSource;
+			sourceTree = "<group>";
+		};
+		3BE7E079222D1E0F001F629B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B691F6922201D1F007670BE /* CSBaseModel.h */,
+				3B691F6A22201D1F007670BE /* CSBaseModel.m */,
+				3B691FA622216242007670BE /* CSResponseRoot.h */,
+				3B691FA722216242007670BE /* CSResponseRoot.m */,
+				3B691FA92221685B007670BE /* CSStatus.h */,
+				3B691FAA2221685B007670BE /* CSStatus.m */,
+				3B691FAC22216DDE007670BE /* CSUser.h */,
+				3B691FAD22216DDE007670BE /* CSUser.m */,
+				3B691F632220171B007670BE /* CSLoginUser.h */,
+				3B691F642220171C007670BE /* CSLoginUser.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		872F52B221633F24511272ED /* Frameworks */ = {

@@ -20,7 +20,7 @@
         [_stackView setAxis:UILayoutConstraintAxisHorizontal];
         [_stackView setSpacing:2.0f];
         [_stackView setDistribution:UIStackViewDistributionFillEqually];
-        [_stackView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [_stackView setTranslatesAutoresizingMaskIntoConstraints:NO];   // 关闭约束转换
 
         _forward = [[UIButton alloc] init];
         _comment = [[UIButton alloc] init];

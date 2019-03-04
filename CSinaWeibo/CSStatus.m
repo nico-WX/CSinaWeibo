@@ -7,6 +7,7 @@
 //
 
 #import "CSStatus.h"
+#import <UIKit/UIKit.h>
 
 @implementation CSStatus
 
@@ -15,8 +16,23 @@
 }
 
 - (NSAttributedString *)allText{
-    NSAttributedString *att;
+    NSMutableAttributedString *att = [[NSMutableAttributedString alloc] initWithString:self.text];
 
-    return att;
+    if (self.retweeted_status) {
+        NSString *name = [NSString stringWithFormat:@"@%@",self.retweeted_status.user.name];
+        NSDictionary *attributesDict = @{NSForegroundColorAttributeName:UIColor.blueColor,
+                                         NSLinkAttributeName:self.retweeted_status.user.identifier,
+                                         };
+
+        NSMutableAttributedString *userName = [[NSMutableAttributedString alloc] initWithString:name attributes:attributesDict];
+        [userName insertAttributedString:[[NSAttributedString alloc] initWithString:@"//"] atIndex:0];
+
+        NSString *text = [NSString stringWithFormat:@" %@",self.retweeted_status.text];
+        [userName appendAttributedString:[[NSAttributedString alloc] initWithString:text]];
+        [att appendAttributedString:userName];
+
+    }
+
+   return att;
 }
 @end
